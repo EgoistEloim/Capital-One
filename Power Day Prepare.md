@@ -63,3 +63,4 @@
 	2. 应当有一个非常基本的baseline validation set，当我们有新的模型训练完成时，将该模型在baseline validation set上面进行inference，查看inference的结果是否存在问题。这个方法是基于这样一个假设的：我们的模型更新并不会使得我们模型丧失最基本的分类能力，因此它在简单baseline上面的表现应当变化幅度很小。
 	3. 
 10. github流程
+11. [feature engineering](https://asialee.blog.csdn.net/article/details/84863410?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs)
