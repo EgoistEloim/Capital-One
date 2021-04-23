@@ -67,3 +67,47 @@
 	2. 保证无论任何情况下master branch上面的代码是可以deploy的
 	3. 冲突出现后手动check和修改冲突从而使得merge能够正常进行
 11. [feature engineering](https://asialee.blog.csdn.net/article/details/84863410?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs)
+
+## Role Play
+1. Features
+	1. dayofweek做成categorical feature，用dummy(one-hot)来做
+	2. 是否delay不能用regression，更关注是否delay>8mins，所以用binary classification -> logistic regression，关注有没有用Binary Class简历regression模型
+	3. 会有一些features是高度线性相关的
+		- 利用ANOVA表格来看，如果T-test结果高并且p-value小于0.05则说明我们应当支持Null Hypothesis，表明我们现有的variables的prediction是可以信赖的
+		- ANOVA表格中F-test value很significant但是R^2很小这种情况需要解释：**待补充**
+		- multi-colineariity的影响:
+			1. Make the model unstable if it meets data beyond its training range
+			2. thre coefficients of the predictors if not explainable
+			3. **待补充**
+		- P-value: p-valueis the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct
+		- VIF:**待补充**
+	4. 加入飞机起飞地点和飞机上实际座位数量作为features，后面会有图表明这两个是有影响的
+	5. 有些图标或者变量的数字并不是很合理，比如座位数量=-1这种，要注意修改
+	6. 存在missing data
+2. Model - Linear Regression
+	1. Assumptions:
+		- predictors are independent
+		- noise obey the Gaussian Distribution(Normal Distribution) with 0 Mean and constant variance
+		- the response(label) is linear correlated with predictors
+	2. 如何解决predictor 和 response非线性关系:
+		- 更换模型
+		- 对response或者predictor进行非线性变换
+	3. 如何解决predictors之间并不是线性无关的问题:
+		- L2 penalty(ridge regression)
+		- combine or remove the predictors
+3. 保留图表
+	- 有一个图表会表明predictors和response是有关系但是不线性的，需要注意
+4. 保留predictors
+	- 根据多重共线性关系来判断airplane-type已经可以涵盖很多的predictors了
+## BQ
+1. Questions:
+	1. Most challenging project
+	2. Tell me about your failure
+	3. What will you do if you have a confliction with coworkers
+	4. Tell me a time that you help your team
+	5. 
+2. Answer Structure
+	- Situation: Think of a situation in which you were involved that had a positive outcome
+	- Task: Describe the tasks involved in the situation
+	- Action: Specify what actions you took in the situation to complete the tasks and achieve your results
+	- Results: What results followed due to your actions
