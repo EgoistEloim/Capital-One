@@ -67,7 +67,8 @@
 	2. 保证无论任何情况下master branch上面的代码是可以deploy的
 	3. 冲突出现后手动check和修改冲突从而使得merge能够正常进行
 11. [feature engineering](https://asialee.blog.csdn.net/article/details/84863410?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs)
-
+12. Confusion Matrix：**待补充**
+13. AUC ROC：**待补充**
 ## Role Play
 1. Features
 	1. dayofweek做成categorical feature，用dummy(one-hot)来做
