@@ -36,7 +36,10 @@
 	2. 拥有的计算资源和可以接收的计算时间
 	3. 任务的紧迫程度
 	4. 期望从数据中挖掘的内容
-	5. ![速查表](https://blogs.sas.com/content/subconsciousmusings/files/2017/04/machine-learning-cheet-sheet-2.png)
+	5. money cost
+	6. 模型是否easy to coorperation
+	7. 考察每个模型的assumption是否满足
+	8. ![速查表](https://blogs.sas.com/content/subconsciousmusings/files/2017/04/machine-learning-cheet-sheet-2.png)
 6. 不同模型的优缺点、适用情况
 	1. 通常情况下，如果是小训练集，高偏差/低方差的分类器（例如，朴素贝叶斯NB）要比低偏差/高方差大分类的优势大（例如，KNN），因为后者会发生过拟合（overfiting）。然而，随着你训练集的增长，模型对于原数据的预测能力就越好，偏差就会降低，此时低偏差/高方差的分类器就会渐渐的表现其优势（因为它们有较低的渐近误差），而高偏差分类器这时已经不足以提供准确的模型了。
 	2. Naive Bayse:
