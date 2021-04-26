@@ -105,10 +105,14 @@
 			2. thre coefficients of the predictors if not explainable
 			3. **待补充**
 		- P-value: p-valueis the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct
-		- VIF:**待补充**
+		- VIF(variance inflation factor):
+			1. 方差扩大因子其实类似于相关系数矩阵，通过相关系数矩阵，我们只能大致看出存不存在多重共线性，但是通过方差扩大因子VIF可以度量多重共线性的严重程度
+			2. 回归方程的R2代表Xi能用其他变量解释的程度，也就代表了自变量本身多重共线性的强度，定义自变量Xi的方差扩大因子VIFi为
+			![VIF](https://pic1.zhimg.com/80/v2-c3f5293fbc6fa2957818817f924e9b14_720w.png)
+			3. 经验表明，当VIF>10，也就是R2>0.9,就说明自变量Xi与其他自变量之间有严重的多重共线性，且这种多重共线性可能会的过度地影响小二乘估计量，因为最小二乘法估计就是求解X^T·X和它的逆矩阵，如果存在多重共线性的问题会导致这个矩阵的行列式的值接近于0，也就使得逆矩阵的求解极其不稳定，导致最小二乘法对参数的估计偏差很大
 	4. 加入飞机起飞地点和飞机上实际座位数量作为features，后面会有图表明这两个是有影响的
 	5. 有些图标或者变量的数字并不是很合理，比如座位数量=-1这种，要注意修改
-	6. 存在missing data
+	6. 存在missing data，有一页就是data里有一部分的missing data并不是missing at random， 而是只在一个category里miss了。所以不可以直接impute。然后他是放在一页有四个类似于confusion matrix的ppt里所以大家看到那页的时候记得注意一下。
 2. Model - Linear Regression
 	1. Assumptions:
 		- predictors are independent
