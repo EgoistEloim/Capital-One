@@ -54,11 +54,17 @@
 	5. [KNN](https://zhuanlan.zhihu.com/p/46831267)
 	6. [Decision Tree](https://zhuanlan.zhihu.com/p/46831267)
 	7. [Random Forest vs LR vs XGB](https://www.nowcoder.com/ta/review-ml/review?page=99)
+	8. [Xgboost](https://zhuanlan.zhihu.com/p/148050748)
 7. 数据量超大怎么处理
 	1.[Spark和Hadoop的区别和比较](https://blog.csdn.net/weixin_43520450/article/details/108740235?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs)
+		- Spark: 是分布式计算平台，是一个用scala语言编写的计算框架，基于内存的快速、通用、可扩展的大数据分析引擎
+		- Hadoop: 是分布式管理、存储、计算的生态系统，其中包括三大部分：HDFS（存储）、MapReduce（计算）、Yarn（资源调度）
+		- Spark比Hadoop快的原因：
+			1.MR启动就需要申请资源，用完就销毁，但是spark把进程拿到以后，这个进程会一直存在，即使没有job在跑，所以后边的job可以直接启动，不需要再重新申请资源
+			2.Hadoop是从HDFS读取数据，通过MR将中间结果写入HDFS；然后再重新从HDFS读取数据进行MR，再刷写到HDFS，这个过程涉及多次落盘操作，多次磁盘IO，效率并不高；而Spark的设计模式是读取集群中的数据后，在内存中存储和运算，直到全部运算完毕后，再存储到集群中
 8. 怎么让模型每天自动跑，更新
 	1. online-learning:
-		- [online gradient descent](https://blog.csdn.net/Losteng/article/details/51119764)
+		- [online gradient descent](https://blog.csdn.net/Losteng/article/details/51119764)更关注是否会后悔让这个样本加入训练
 		- Scikit-Learn里面有一个partial learning可以支持incremental learning
 	2. shell脚本检测数据集变动:
 		- 特征数量变动
@@ -77,8 +83,16 @@
 	2. 保证无论任何情况下master branch上面的代码是可以deploy的
 	3. 冲突出现后手动check和修改冲突从而使得merge能够正常进行
 11. [feature engineering](https://asialee.blog.csdn.net/article/details/84863410?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs)
-12. Confusion Matrix：**待补充**
-13. AUC ROC：**待补充**
+12. Confusion Matrix：![混淆矩阵](https://pic1.zhimg.com/80/v2-a253b01cf7f141b9ad11eefdf3cf58d3_720w.jpg?source=1940ef5c)
+13. Evaluation
+	- precision:见图
+	- recall:见图
+	![precision and recall](https://pic1.zhimg.com/80/v2-76b9176719868e9b85bedf5192e722d3_720w.jpg?source=1940ef5c)	
+	- F score: (1+β) x precision x recall / (β^2 x precision + recall)，当β=1的时候退化为F1，β>1的时候更关注recall，反之更关注precision
+	- AUC ROC:
+		1.ROC曲线的x轴是False Positive Rate，y轴是True Positive Rate
+		2.AUC的物理意义为任取一对例和负例，正例得分大于负例得分的概率，AUC越大，表明方法效果越好
+		3.AUC的优势，AUC的计算方法同时考虑了分类器对于正例和负例的分类能力，在样本不平衡的情况下，依然能够对分类器作出合理的评价
 ## Role Play
 1. Features
 	1. dayofweek做成categorical feature，用dummy(one-hot)来做
@@ -116,9 +130,18 @@
 	2. Tell me about your failure
 	3. What will you do if you have a confliction with coworkers
 	4. Tell me a time that you help your team
-	5. 
 2. Answer Structure
 	- Situation: Think of a situation in which you were involved that had a positive outcome
 	- Task: Describe the tasks involved in the situation
 	- Action: Specify what actions you took in the situation to complete the tasks and achieve your results
 	- Results: What results followed due to your actions
+3. Sample Case
+	- Situation: 我刚进入公司，需要对相关产品线的同事和manager进行一个关于道路路面材质预测的机器学习模型的presentation，聆听我汇报的同事既有技术背景的engineer，也有非技术的PM和Manager
+	- Task：我需要向他们讲解清楚模型的原理，为什么work，模型潜在的风险和问题，模型为公司带来的收益和影响
+	- Action: 
+		- 我首先向我的mentor请教了该如何向同事和manager进行presentation，把握住了几个关键的要点：任务，困难，收益，时间线
+		- 其次我将复杂的机器学习原理等知识点进行总结和抽象化，并结合一些实际生活的例子进行说明使得这些概念，知识点变得容易理解
+		- 随后我单独约了一个非技术背景的同事进行meeting，让他看一下我在讲解技术方面的要点时是否存在问题
+		- 最后我通过一些可视化的技术和量化的方法，在解释我们所做的工作的基础上对该工作的投入，收益和风险进行了量化和预测，能够让audience直观地认识到我们的work
+	- Results: 所有的audiences都清楚地认识到我们所做工作的价值，非技术背景的同事对相关知识和技术也有了较为清晰的理解。结束后Manager称赞了我们的工作，认为它从风险，收益和可解释性等方面都给出了明确的结论，直接批准了我们的工作deploy到产品线中
+	
