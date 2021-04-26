@@ -28,6 +28,8 @@
 	4. [Beta Target-Encoding](https://zhuanlan.zhihu.com/p/40231966):
 		- 加入了smoothing term，用 bayesian mean 来代替mean
 3. [“判定模型”和“生成模型”有什么区别](https://www.zhihu.com/question/20446337)
+	- 判别式模型举例：要确定一个羊是山羊还是绵羊，用判别模型的方法是从历史数据中学习到模型，然后通过提取这只羊的特征来预测出这只羊是山羊的概率，是绵羊的概率。
+	- 生成式模型举例：利用生成模型是根据山羊的特征首先学习出一个山羊的模型，然后根据绵羊的特征学习出一个绵羊的模型，然后从这只羊中提取特征，放到山羊模型中看概率是多少，在放到绵羊模型中看概率是多少，哪个大就是哪个。
 4. variance和bias的理解
 	- variance: 度量了同样大小的训练集的变动速调值得学习性能的变化,既刻画了数据扰动所造成的的影响
 	- bias: 度量了学习算法的期望预测与真实结果的偏离程度,即刻画了学习算法本身的拟合能力
@@ -57,6 +59,7 @@
 8. 怎么让模型每天自动跑，更新
 	1. online-learning:
 		- [online gradient descent](https://blog.csdn.net/Losteng/article/details/51119764)
+		- Scikit-Learn里面有一个partial learning可以支持incremental learning
 	2. shell脚本检测数据集变动:
 		- 特征数量变动
 		- 数据格式变动
