@@ -56,7 +56,7 @@
 	7. [Random Forest vs LR vs XGB](https://www.nowcoder.com/ta/review-ml/review?page=99)
 	8. [Xgboost](https://zhuanlan.zhihu.com/p/148050748)
 7. 数据量超大怎么处理
-	1.[Spark和Hadoop的区别和比较](https://blog.csdn.net/weixin_43520450/article/details/108740235?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs)
+	1. [Spark和Hadoop的区别和比较](https://blog.csdn.net/weixin_43520450/article/details/108740235?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs)
 		- Spark: 是分布式计算平台，是一个用scala语言编写的计算框架，基于内存的快速、通用、可扩展的大数据分析引擎
 		- Hadoop: 是分布式管理、存储、计算的生态系统，其中包括三大部分：HDFS（存储）、MapReduce（计算）、Yarn（资源调度）
 		- Spark比Hadoop快的原因：
