@@ -102,7 +102,7 @@
 		- ANOVA表格中F-test value很significant但是R^2很小这种情况需要解释：**待补充**
 		- multi-colineariity的影响:
 			1. Make the model unstable if it meets data beyond its training range
-			2. thre coefficients of the predictors if not explainable
+			2. it's not explainable by its face value
 			3. **待补充**
 		- P-value: p-valueis the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct
 		- VIF(variance inflation factor):
@@ -148,4 +148,7 @@
 		- 随后我单独约了一个非技术背景的同事进行meeting，让他看一下我在讲解技术方面的要点时是否存在问题
 		- 最后我通过一些可视化的技术和量化的方法，在解释我们所做的工作的基础上对该工作的投入，收益和风险进行了量化和预测，能够让audience直观地认识到我们的work
 	- Results: 所有的audiences都清楚地认识到我们所做工作的价值，非技术背景的同事对相关知识和技术也有了较为清晰的理解。结束后Manager称赞了我们的工作，认为它从风险，收益和可解释性等方面都给出了明确的结论，直接批准了我们的工作deploy到产品线中
+		- 最后我回顾了一下这个project，我们组的成员不仅从技术方面受益很多，也从bussiness方面成长了很多
+		- 能完成这个project的原因就是我们成功切高效的进行交流和讨论，站在对方的立场进行思考
+		- 即使大家有disagressment/failure，并不重要，重要的是我们如何解决分歧或者从失败中学到了什么
 	
