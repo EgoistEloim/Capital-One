@@ -73,7 +73,6 @@
 	3. 为什么我们要定期更新模型
 		- 当数据的label发生变化会从根本上影响我们model的性能
 		- 数据的定期更新有可能导致我们一开始对于数据分布和模型部署的一些假设不再满足
-		- 
 9. 监测模型有没有出错
 	1. 首先判断我们整个机器学习pipeline是否为e2e的，针对每一个end的位置我们都应当制定或者明确这个end的输出是什么样子的，符合什么标准的，并利用一定的程序校验来检测输出的正确性
 	2. 应当有一个非常基本的baseline validation set，当我们有新的模型训练完成时，将该模型在baseline validation set上面进行inference，查看inference的结果是否存在问题。这个方法是基于这样一个假设的：我们的模型更新并不会使得我们模型丧失最基本的分类能力，因此它在简单baseline上面的表现应当变化幅度很小。
@@ -83,6 +82,16 @@
 	2. 保证无论任何情况下master branch上面的代码是可以deploy的
 	3. 冲突出现后手动check和修改冲突从而使得merge能够正常进行
 11. [feature engineering](https://asialee.blog.csdn.net/article/details/84863410?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs)
+	1. Time Series:
+		- 滑动窗口 + Fourier Transformation: 将时空领域的数据转换为频率领域的一种变换方式
+		- tsfresh：一个计算时间相关特征的package，有approximate_entropy(反应时序数据的的周期性、不可预测性和波动性)等特征
+		- LSTM/RNN来捕获时序关系
+	2. Conditional Probablity: 计算一些条件概率的特征往往会比较有效
+	3. 递归特征消除
+	4. 不平衡数据集
+		- Upsample
+		- Downsample
+		- Generator
 12. Confusion Matrix：![混淆矩阵](https://pic1.zhimg.com/80/v2-a253b01cf7f141b9ad11eefdf3cf58d3_720w.jpg?source=1940ef5c)
 13. Evaluation
 	- precision:见图
@@ -98,8 +107,11 @@
 	1. dayofweek做成categorical feature，用dummy(one-hot)来做
 	2. 是否delay不能用regression，更关注是否delay>8mins，所以用binary classification -> logistic regression，关注有没有用Binary Class简历regression模型
 	3. 会有一些features是高度线性相关的
-		- 利用ANOVA表格来看，如果T-test结果高并且p-value小于0.05则说明我们应当支持Null Hypothesis，表明我们现有的variables的prediction是可以信赖的
-		- ANOVA表格中F-test value很significant但是R^2很小这种情况需要解释：**待补充**
+		- 利用ANOVA表格来看，如果F-test结果高并且p-value小于0.05则说明我们应当支持Null Hypothesis，表明我们现有的variables的prediction是可以信赖的
+		- ANOVA表格中F-test value很significant但是R^2很小这种情况需要解释：
+			1. F-test value 结果很高说明MSB/MSE的值很大，就表明我
+		- R square: it is the percentage of the response variable variation that is explained by a linear model
+		- F test: F Statistic = variance of the group means / mean of the within group variances.
 		- multi-colineariity的影响:
 			1. Make the model unstable if it meets data beyond its training range
 			2. it's not explainable by its face value
