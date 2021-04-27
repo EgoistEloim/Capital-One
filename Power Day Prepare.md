@@ -63,6 +63,8 @@
 		- Spark比Hadoop快的原因：
 			1. MR启动就需要申请资源，用完就销毁，但是spark把进程拿到以后，这个进程会一直存在，即使没有job在跑，所以后边的job可以直接启动，不需要再重新申请资源
 			2. Hadoop是从HDFS读取数据，通过MR将中间结果写入HDFS；然后再重新从HDFS读取数据进行MR，再刷写到HDFS，这个过程涉及多次落盘操作，多次磁盘IO，效率并不高；而Spark的设计模式是读取集群中的数据后，在内存中存储和运算，直到全部运算完毕后，再存储到集群中
+	2. [Map Reduce Work Flow](https://hci.stanford.edu/courses/cs448g/a2/files/map_reduce_tutorial.pdf)
+	3. 
 8. 怎么让模型每天自动跑，更新
 	1. online-learning:
 		- [online gradient descent](https://blog.csdn.net/Losteng/article/details/51119764)更关注是否会后悔让这个样本加入训练
@@ -105,6 +107,12 @@
 			- TPR = TP / (TP + FN)
 		2. AUC的物理意义为任取一对例和负例，正例得分大于负例得分的概率，AUC越大，表明方法效果越好
 		3. AUC的优势，AUC的计算方法同时考虑了分类器对于正例和负例的分类能力，在样本不平衡的情况下，依然能够对分类器作出合理的评价
+14. Distribution
+	1. Mutibinomial distribution
+		- E(X_j) = n * p_j，n是结果可能的取值数量，p是不同取值的概率
+		- Var(X_j) = n * p_j * (1-p_j)
+	2. [Poisson distribution](https://blog.csdn.net/Eric2016_Lv/article/details/53141465?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-1&spm=1001.2101.3001.4242)
+	3. [其他各种分布](https://blog.csdn.net/kicilove/article/details/78655856)
 ## Role Play
 1. Features
 	1. dayofweek做成categorical feature，用dummy(one-hot)来做
