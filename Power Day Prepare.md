@@ -23,6 +23,7 @@
 		- 缺点:将不同类别编码为1...N之后会有个问题，实际上类别之间是没有关系的，但model会认为他们有关系
 		- 注意: 暂无
 	3. Target-Encoding:
+		- 计算该feature取值下target=1的概率
 		- 用于处理high-categorical特征
 		- 使用2 levels of cross-validation求出target mean
 	4. [Beta Target-Encoding](https://zhuanlan.zhihu.com/p/40231966):
@@ -100,6 +101,8 @@
 	- F score: (1+β) x precision x recall / (β^2 x precision + recall)，当β=1的时候退化为F1，β>1的时候更关注recall，反之更关注precision
 	- AUC ROC:
 		1.ROC曲线的x轴是False Positive Rate，y轴是True Positive Rate
+			- FPR = FP / (TN+FP)
+			- TPR = TP / (TP + FN)
 		2.AUC的物理意义为任取一对例和负例，正例得分大于负例得分的概率，AUC越大，表明方法效果越好
 		3.AUC的优势，AUC的计算方法同时考虑了分类器对于正例和负例的分类能力，在样本不平衡的情况下，依然能够对分类器作出合理的评价
 ## Role Play
@@ -109,13 +112,15 @@
 	3. 会有一些features是高度线性相关的
 		- 利用ANOVA表格来看，如果F-test结果高并且p-value小于0.05则说明我们应当支持Null Hypothesis，表明我们现有的variables的prediction是可以信赖的
 		- ANOVA表格中F-test value很significant但是R^2很小这种情况需要解释：
-			1. F-test value 结果很高说明MSB/MSE的值很大，就表明我
+			1. F-test value是组间方差和组内方差的比值，衡量了不同样本的和总体方差的偏离程度与不同样本本身的离散程度的比值
+			2. 结合p-value来看，如果p<0.05(alpha level)那就说明我们的independent variables reliably predict the dependent variable，否则不能
+			3. R^2很小说明我们的label的方差并不能很好地被模型解释
+			4. 因此说明我们的sample数据并不能够合理地代表
 		- R square: it is the percentage of the response variable variation that is explained by a linear model
 		- F test: F Statistic = variance of the group means / mean of the within group variances.
 		- multi-colineariity的影响:
 			1. Make the model unstable if it meets data beyond its training range
 			2. it's not explainable by its face value
-			3. **待补充**
 		- P-value: p-valueis the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct
 		- VIF(variance inflation factor):
 			1. 方差扩大因子其实类似于相关系数矩阵，通过相关系数矩阵，我们只能大致看出存不存在多重共线性，但是通过方差扩大因子VIF可以度量多重共线性的严重程度
@@ -163,4 +168,6 @@
 		- 最后我回顾了一下这个project，我们组的成员不仅从技术方面受益很多，也从bussiness方面成长了很多
 		- 能完成这个project的原因就是我们成功切高效的进行交流和讨论，站在对方的立场进行思考
 		- 即使大家有disagressment/failure，并不重要，重要的是我们如何解决分歧或者从失败中学到了什么
-	
+4. Why Capital One
+	- 我一个在C1工作的朋友给我介绍了很多关于C1的优点，其中最吸引我的一点是C1非常promotes patenting and invention，这无疑是对员工工作创新性的鼓励。在如此之多的banking公司里面，C1的这个特点非常特殊，但也正是这种对于创新和思考的鼓励吸引了我。所以我愿意在C1发挥我的才能，Constantly innovate and seek progress.
+	- 
