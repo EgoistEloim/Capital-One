@@ -100,11 +100,11 @@
 	![precision and recall](https://pic1.zhimg.com/80/v2-76b9176719868e9b85bedf5192e722d3_720w.jpg?source=1940ef5c)	
 	- F score: (1+β) x precision x recall / (β^2 x precision + recall)，当β=1的时候退化为F1，β>1的时候更关注recall，反之更关注precision
 	- AUC ROC:
-		1.ROC曲线的x轴是False Positive Rate，y轴是True Positive Rate
+		1. ROC曲线的x轴是False Positive Rate，y轴是True Positive Rate
 			- FPR = FP / (TN+FP)
 			- TPR = TP / (TP + FN)
-		2.AUC的物理意义为任取一对例和负例，正例得分大于负例得分的概率，AUC越大，表明方法效果越好
-		3.AUC的优势，AUC的计算方法同时考虑了分类器对于正例和负例的分类能力，在样本不平衡的情况下，依然能够对分类器作出合理的评价
+		2. AUC的物理意义为任取一对例和负例，正例得分大于负例得分的概率，AUC越大，表明方法效果越好
+		3. AUC的优势，AUC的计算方法同时考虑了分类器对于正例和负例的分类能力，在样本不平衡的情况下，依然能够对分类器作出合理的评价
 ## Role Play
 1. Features
 	1. dayofweek做成categorical feature，用dummy(one-hot)来做
