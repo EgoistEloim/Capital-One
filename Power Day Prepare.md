@@ -102,6 +102,7 @@
 	- precision:见图
 	- recall:见图
 	![precision and recall](https://pic1.zhimg.com/80/v2-76b9176719868e9b85bedf5192e722d3_720w.jpg?source=1940ef5c)	
+	![sensitivity and specificity](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Sensitivity_and_specificity_1.01.svg/800px-Sensitivity_and_specificity_1.01.svg.png)
 	- F score: (1+β) x precision x recall / (β^2 x precision + recall)，当β=1的时候退化为F1，β>1的时候更关注recall，反之更关注precision
 	- AUC ROC:
 		1. ROC曲线的x轴是False Positive Rate，y轴是True Positive Rate
