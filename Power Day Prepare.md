@@ -64,7 +64,7 @@
 		- Spark比Hadoop快的原因：
 			1. MR启动就需要申请资源，用完就销毁，但是spark把进程拿到以后，这个进程会一直存在，即使没有job在跑，所以后边的job可以直接启动，不需要再重新申请资源
 			2. Hadoop是从HDFS读取数据，通过MR将中间结果写入HDFS；然后再重新从HDFS读取数据进行MR，再刷写到HDFS，这个过程涉及多次落盘操作，多次磁盘IO，效率并不高；而Spark的设计模式是读取集群中的数据后，在内存中存储和运算，直到全部运算完毕后，再存储到集群中
-	2. [Map Reduce Work Flow](https://hci.stanford.edu/courses/cs448g/a2/files/map_reduce_tutorial.pdf)
+	2. ![Map Reduce Work Flow](https://hci.stanford.edu/courses/cs448g/a2/files/map_reduce_tutorial.pdf)
 	3. 
 8. 怎么让模型每天自动跑，更新
 	1. online-learning:
