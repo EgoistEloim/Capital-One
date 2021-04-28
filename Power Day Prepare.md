@@ -156,6 +156,7 @@
 	- 根据多重共线性关系来判断airplane-type已经可以涵盖很多的predictors了
 ## BQ
 1. Questions:
+	zhuozhong dianti
 	1. Most challenging project
 	2. Tell me about your failure
 	3. What will you do if you have a confliction with coworkers
@@ -179,4 +180,4 @@
 		- 即使大家有disagressment/failure，并不重要，重要的是我们如何解决分歧或者从失败中学到了什么
 4. Why Capital One
 	- 我一个在C1工作的朋友给我介绍了很多关于C1的优点，其中最吸引我的一点是C1非常promotes patenting and invention，这无疑是对员工工作创新性的鼓励。在如此之多的banking公司里面，C1的这个特点非常特殊，但也正是这种对于创新和思考的鼓励吸引了我。所以我愿意在C1发挥我的才能，Constantly innovate and seek progress.
-	- 
+	- 我学习的就是Machine Learning，认识到ML的强大能力，在我了解的公司里,c1 post strongest focus on the application of ML, 几乎全部的决策都是由数据和模型驱动的，所以我觉得我的兴趣方向和C1的着力方向非常匹配，所以我对C1的未来发展很有信心
