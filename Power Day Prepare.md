@@ -85,6 +85,7 @@
 	1. ![Git work flow](https://user-gold-cdn.xitu.io/2019/8/12/16c84ff492a9de1a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 	2. 保证无论任何情况下master branch上面的代码是可以deploy的
 	3. 冲突出现后手动check和修改冲突从而使得merge能够正常进行
+	4. 例如当人们对 Git 仓库中不同分支上同一文件的同一行进行不同的更改时。 对于所有其他类型的合并冲突，您必须在命令行上本地解决冲突。
 11. [feature engineering](https://asialee.blog.csdn.net/article/details/84863410?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-5.baidujs)
 	1. Time Series:
 		- 滑动窗口 + Fourier Transformation: 将时空领域的数据转换为频率领域的一种变换方式
