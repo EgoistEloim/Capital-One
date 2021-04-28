@@ -98,6 +98,7 @@
 		- Generator
 12. Confusion Matrix：![混淆矩阵](https://pic1.zhimg.com/80/v2-a253b01cf7f141b9ad11eefdf3cf58d3_720w.jpg?source=1940ef5c)
 13. Evaluation
+	- [Regression](https://zhuanlan.zhihu.com/p/143169742)
 	- precision:见图
 	- recall:见图
 	![precision and recall](https://pic1.zhimg.com/80/v2-76b9176719868e9b85bedf5192e722d3_720w.jpg?source=1940ef5c)	
